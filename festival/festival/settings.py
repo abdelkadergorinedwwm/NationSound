@@ -14,6 +14,9 @@ STATICFILES_DIRS = [
     BASE_DIR / 'monsite/static',  # Assurez-vous que ce dossier existe pour les fichiers statiques
 ]
 
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 # Configuration des fichiers médias (images, vidéos, etc.)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'  # Le répertoire où les fichiers médias seront stockés

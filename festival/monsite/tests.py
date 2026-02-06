@@ -23,7 +23,7 @@ class ArtisteModelTest(TestCase):
 class ConcertModelTest(TestCase):
     def test_concert_creation(self):
         artiste = Artiste.objects.create(nom="Artiste Test")
-        scene = Scene.objects.create(nom_scene="Zeus")
+        scene = Scene.objects.create(nom_scene="Nebula")
         concert = Concert.objects.create(
             artiste=artiste,
             scene=scene,
@@ -122,7 +122,6 @@ class ViewsTestCase(TestCase):
         self.url_partenaires = reverse('partenaires')  # page partenaires
 
     def test_accueil_view(self):
-        """Test pour vérifier que la page d'accueil s'affiche correctement"""
         response = self.client.get(self.url_accueil)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Nation Sound Festival")

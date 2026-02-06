@@ -4,7 +4,6 @@ from django.contrib import messages
 
 # 🔹 PAGE D'ACCUEIL
 def accueil(request):
-    # Récupérer le message urgent actif le plus récent
     message_urgent = MessagesUrgents.objects.filter(is_active=True).first()
     
     context = {

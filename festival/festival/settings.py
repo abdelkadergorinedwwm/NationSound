@@ -1,9 +1,5 @@
 from pathlib import Path
 import os
-from dotenv import load_dotenv
-
-# Charger les variables d'environnement depuis le fichier .env
-load_dotenv()
 
 # Base directory of the project
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -14,21 +10,20 @@ STATICFILES_DIRS = [
     BASE_DIR / 'monsite/static',  # Assurez-vous que ce dossier existe pour les fichiers statiques
 ]
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # Cette ligne remplace la doublon de STATIC_URL
 
 # Configuration des fichiers médias (images, vidéos, etc.)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'  # Le répertoire où les fichiers médias seront stockés
 
 # Sécurité du projet
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')  # La clé est récupérée de l'environnement
+SECRET_KEY = 'django-insecure-r%lgs41^q@axqtl2&w4_(=es#y(=+*n+l4!)*ec0-p2(#*5imh'
 
 # Autres paramètres
-DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
+DEBUG = True  # On définit DEBUG directement sans l'utiliser depuis un fichier .env
 
-# Ajouter les hôtes autorisés depuis les variables d'environnement
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+# Ajouter les hôtes autorisés
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']  # Liste des hôtes autorisés
 
 # Configuration des applications installées
 INSTALLED_APPS = [
@@ -38,12 +33,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'monsite',  # Assurez-vous que cette application existe dans votre projet
+    'monsite',  # Assurez-vous que cette application existe
 ]
 
 # Configuration du middleware
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    'django.middleware.security.SecurityMiddleware',  # Ce middleware est utile seulement pour la production
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -54,9 +49,6 @@ MIDDLEWARE = [
 
 # Configuration des URLs de base
 ROOT_URLCONF = 'festival.urls'
-
-# Application WSGI
-WSGI_APPLICATION = 'festival.wsgi.application'
 
 # Base de données (SQLite pour le développement)
 DATABASES = {

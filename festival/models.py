@@ -23,16 +23,6 @@ class Concert(models.Model):
         return f"{self.artiste.nom} - {self.scene.nom_scene} ({self.date_concert})"
 
 
-class MessagesUrgents(models.Model):
-    message = models.TextField()
-    is_active = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-    def __str__(self):
-        return self.message[:50]  # Affiche les 50 premiers caractères
-    
-    class Meta:
-        verbose_name_plural = "Messages Urgents"
 
 
 class TypePartenaire(models.Model):

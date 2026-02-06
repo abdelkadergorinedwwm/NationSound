@@ -4,13 +4,15 @@ import dj_database_url  # pip install dj-database-url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECRET_KEY depuis les variables d'environnement
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "fallback_secret_key")
+# settings.py
+
+SECRET_KEY = '1234'
+
 
 # DEBUG depuis les variables d'environnement
 DEBUG = os.environ.get("DEBUG", "False") == "False"
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
 
 
 # Applications installées
@@ -23,6 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'festival',
 ]
+
+ALLOWED_HOSTS = ['nationsound-production.up.railway.app', '127.0.0.1', 'localhost']
 
 # Middleware
 MIDDLEWARE = [

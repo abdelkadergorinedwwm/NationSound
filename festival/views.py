@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
-from .models import Scene, Artiste, Concert, MessagesUrgents, Partenaire, TypePartenaire, MessageContact
+from .models import Scene, Artiste, Concert, MessageUrgent, Partenaire, TypePartenaire, MessageContact
 from django.contrib import messages
 
 # 🔹 PAGE D'ACCUEIL
 def accueil(request):
-    message_urgent = MessagesUrgents.objects.filter(is_active=True).first()
+    message_urgent = MessageUrgent.objects.filter(is_active=True).first()
     
     context = {
         'message_urgent': message_urgent

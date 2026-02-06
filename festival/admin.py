@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Scene, Concert, Artiste, MessagesUrgents, Partenaire, TypePartenaire, MessageContact
+from .models import Scene, Concert, Artiste, MessageUrgent, Partenaire, TypePartenaire, MessageContact
 from django.core.mail import send_mail
 from django.conf import settings
 from django.utils.html import format_html
@@ -28,8 +28,8 @@ class SceneAdmin(admin.ModelAdmin):
 
 
 # --- Messages Urgents Admin ---
-@admin.register(MessagesUrgents)
-class MessagesUrgentsAdmin(admin.ModelAdmin):
+@admin.register(MessageUrgent)
+class MessageUrgentAdmin(admin.ModelAdmin):
     list_display = ('message', 'is_active', 'created_at')  # Affichage du message, état actif et date de création
     list_filter = ('is_active',)  # Filtre pour l'état du message (actif ou non)
 

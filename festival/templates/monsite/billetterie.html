@@ -1,0 +1,50 @@
+{% extends "monsite/base.html" %}
+
+{% block title %}Nation Sound Festival - Billetterie{% endblock %}
+
+{% block nav_billetterie %}active{% endblock %}
+
+{% block content %}
+<section class="container-fluid mt-4">
+    <h1 class="h3">Billetterie</h1>
+    <p>Bienvenue sur la page de billetterie du Sound Nation Festival. Choisissez votre type de billet et procédez à l'achat en ligne.</p>
+    
+    <div class="row">
+        <!-- Standard Ticket -->
+        <div class="col-md-4">
+            <div class="card mb-4 h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Billet Standard</h5>
+                    <p class="card-text">Accès général au festival, une journée.</p>
+                    <p class="card-text"><strong>50€</strong></p>
+                    <a href="https://www.ticketmaster.fr" class="btn btn-primary">Acheter</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- VIP Ticket -->
+        <div class="col-md-4">
+            <div class="card mb-4 h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Billet VIP</h5>
+                    <p class="card-text">Accès complet, accès à la zone VIP, une journée.</p>
+                    <p class="card-text"><strong>100€</strong></p>
+                    <a href="https://www.ticketmaster.fr" class="btn btn-primary">Acheter</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Backstage Pass -->
+        <div class="col-md-4">
+            <div class="card mb-4 h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Pass Backstage</h5>
+                    <p class="card-text">Accès complet aux coulisses, toute la durée du festival.</p>
+                    <p class="card-text"><strong>250€</strong></p>
+                    <a href="https://www.ticketmaster.fr" class="btn btn-primary">Acheter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
